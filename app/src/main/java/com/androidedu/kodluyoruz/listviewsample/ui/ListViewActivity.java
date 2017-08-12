@@ -1,4 +1,4 @@
-package com.androidedu.kodluyoruz.listviewsample;
+package com.androidedu.kodluyoruz.listviewsample.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.androidedu.kodluyoruz.listviewsample.R;
 
 import java.util.ArrayList;
 

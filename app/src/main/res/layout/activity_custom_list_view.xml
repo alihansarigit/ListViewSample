@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.androidedu.kodluyoruz.listviewsample.ui.ListViewActivity">
+    tools:context="com.androidedu.kodluyoruz.listviewsample.ui.CustomListViewActivity">
 
     <ListView
-        android:id="@+id/activity_list_view_lstCities"
+        android:id="@+id/activity_custom_list_lstCurrency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
