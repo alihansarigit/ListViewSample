@@ -35,24 +35,31 @@ public class CurrencyListAdapter extends ArrayAdapter<CurrencyViewModel> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
+        CurrencyListViewHolder currencyListViewHolder;
+
         if (convertView == null) {
 
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_item_currencylist, null);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_item_currencylist, parent, false);
+
+            currencyListViewHolder = new CurrencyListViewHolder();
+
+            currencyListViewHolder.setTxtCurrencyName((TextView) convertView.findViewById(R.id.adapter_item_currencylist_txtCurrencyName));
+            currencyListViewHolder.setTxtCurrencyAbbr((TextView) convertView.findViewById(R.id.adapter_item_currencylist_txtCurrencyAbbr));
+            currencyListViewHolder.setTxtCurrencyBuyValue((TextView) convertView.findViewById(R.id.adapter_item_currencylist_txtBuyValue));
+            currencyListViewHolder.setTxtCurrencySellValue((TextView) convertView.findViewById(R.id.adapter_item_currencylist_txtSellValue));
+
+            convertView.setTag(currencyListViewHolder);
+        } else {
+            currencyListViewHolder = (CurrencyListViewHolder) convertView.getTag();
         }
 
-        TextView txtCurrencyName = convertView.findViewById(R.id.adapter_item_currencylist_txtCurrencyName);
-        TextView txtCurrencyAbbr = convertView.findViewById(R.id.adapter_item_currencylist_txtCurrencyAbbr);
-        TextView txtCurrencyBuyValue = convertView.findViewById(R.id.adapter_item_currencylist_txtBuyValue);
-        TextView txtCurrencySellValue = convertView.findViewById(R.id.adapter_item_currencylist_txtSellValue);
-
-
         CurrencyViewModel selectedCurrencyViewModel = getItem(position);
-//        CurrencyViewModel selectedCurrencyViewModel = currencyList.get(position);
+//      CurrencyViewModel selectedCurrencyViewModel = currencyList.get(position);
 
-        txtCurrencyName.setText(selectedCurrencyViewModel.getCurrencyName());
-        txtCurrencyAbbr.setText(selectedCurrencyViewModel.getCurrencyAbbr());
-        txtCurrencyBuyValue.setText(String.valueOf(selectedCurrencyViewModel.getBuyValue()));
-        txtCurrencySellValue.setText(String.valueOf(selectedCurrencyViewModel.getSellValue()));
+        currencyListViewHolder.getTxtCurrencyName().setText(selectedCurrencyViewModel.getCurrencyName());
+        currencyListViewHolder.getTxtCurrencyAbbr().setText(selectedCurrencyViewModel.getCurrencyAbbr());
+        currencyListViewHolder.getTxtCurrencyBuyValue().setText(String.valueOf(selectedCurrencyViewModel.getBuyValue()));
+        currencyListViewHolder.getTxtCurrencySellValue().setText(String.valueOf(selectedCurrencyViewModel.getSellValue()));
 
         return convertView;
     }
