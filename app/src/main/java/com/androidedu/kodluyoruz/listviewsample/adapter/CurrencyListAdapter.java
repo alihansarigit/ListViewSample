@@ -1,7 +1,6 @@
 package com.androidedu.kodluyoruz.listviewsample.adapter;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -25,8 +24,8 @@ public class CurrencyListAdapter extends ArrayAdapter<CurrencyViewModel> {
     //variable
     private ArrayList<CurrencyViewModel> currencyList = null;
 
-    public CurrencyListAdapter(@NonNull Context context, @LayoutRes int resource, ArrayList<CurrencyViewModel> currencyList) {
-        super(context, resource, currencyList);
+    public CurrencyListAdapter(@NonNull Context context, ArrayList<CurrencyViewModel> currencyList) {
+        super(context, R.layout.adapter_item_currencylist, currencyList);
 
         this.currencyList = currencyList;
     }

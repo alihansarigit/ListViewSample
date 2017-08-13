@@ -6,6 +6,7 @@ import android.widget.ListView;
 
 import com.androidedu.kodluyoruz.listviewsample.R;
 import com.androidedu.kodluyoruz.listviewsample.adapter.CurrencyListAdapter;
+import com.androidedu.kodluyoruz.listviewsample.dummydata.GenerateDummyData;
 import com.androidedu.kodluyoruz.listviewsample.viewmodel.CurrencyViewModel;
 
 import java.util.ArrayList;
@@ -35,87 +36,10 @@ public class CustomListViewActivity extends AppCompatActivity {
 
     private void initEvent() {
 
-        generateDummyList();
+        currencyList = GenerateDummyData.generateDummyList();
 
-        CurrencyListAdapter currencyListAdapter = new CurrencyListAdapter(this, R.layout.adapter_item_currencylist, currencyList);
+        CurrencyListAdapter currencyListAdapter = new CurrencyListAdapter(this, currencyList);
 
         lstCurrency.setAdapter(currencyListAdapter);
-    }
-
-    private void generateDummyList() {
-
-        currencyList = new ArrayList<>();
-
-        CurrencyViewModel currencyViewModel = new CurrencyViewModel();
-        currencyViewModel.setCurrencyName("Amerikan Doları");
-        currencyViewModel.setCurrencyAbbr("USD");
-        currencyViewModel.setBuyValue(1.25);
-        currencyViewModel.setSellValue(1.20);
-
-        currencyList.add(currencyViewModel);
-
-        currencyViewModel = new CurrencyViewModel();
-        currencyViewModel.setCurrencyName("Turkish Liras");
-        currencyViewModel.setCurrencyAbbr("TL");
-        currencyViewModel.setBuyValue(1.50);
-        currencyViewModel.setSellValue(1.40);
-
-        currencyList.add(currencyViewModel);
-
-        currencyViewModel = new CurrencyViewModel();
-        currencyViewModel.setCurrencyName("Europe Money");
-        currencyViewModel.setCurrencyAbbr("Eur");
-        currencyViewModel.setBuyValue(1.21);
-        currencyViewModel.setSellValue(1.18);
-
-        currencyList.add(currencyViewModel);
-
-        currencyViewModel = new CurrencyViewModel();
-        currencyViewModel.setCurrencyName("Amerikan Doları");
-        currencyViewModel.setCurrencyAbbr("USD");
-        currencyViewModel.setBuyValue(1.25);
-        currencyViewModel.setSellValue(1.20);
-
-        currencyList.add(currencyViewModel);
-
-        currencyViewModel = new CurrencyViewModel();
-        currencyViewModel.setCurrencyName("Turkish Liras");
-        currencyViewModel.setCurrencyAbbr("TL");
-        currencyViewModel.setBuyValue(1.50);
-        currencyViewModel.setSellValue(1.40);
-
-        currencyList.add(currencyViewModel);
-
-        currencyViewModel = new CurrencyViewModel();
-        currencyViewModel.setCurrencyName("Europe Money");
-        currencyViewModel.setCurrencyAbbr("Eur");
-        currencyViewModel.setBuyValue(1.21);
-        currencyViewModel.setSellValue(1.18);
-
-        currencyList.add(currencyViewModel);
-
-        currencyViewModel = new CurrencyViewModel();
-        currencyViewModel.setCurrencyName("Amerikan Doları");
-        currencyViewModel.setCurrencyAbbr("USD");
-        currencyViewModel.setBuyValue(1.25);
-        currencyViewModel.setSellValue(1.20);
-
-        currencyList.add(currencyViewModel);
-
-        currencyViewModel = new CurrencyViewModel();
-        currencyViewModel.setCurrencyName("Turkish Liras");
-        currencyViewModel.setCurrencyAbbr("TL");
-        currencyViewModel.setBuyValue(1.50);
-        currencyViewModel.setSellValue(1.40);
-
-        currencyList.add(currencyViewModel);
-
-        currencyViewModel = new CurrencyViewModel();
-        currencyViewModel.setCurrencyName("Europe Money");
-        currencyViewModel.setCurrencyAbbr("Eur");
-        currencyViewModel.setBuyValue(1.21);
-        currencyViewModel.setSellValue(1.18);
-
-        currencyList.add(currencyViewModel);
     }
 }
